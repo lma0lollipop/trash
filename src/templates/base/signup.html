@@ -1,0 +1,74 @@
+signup
+
+<a href="{% url 'base:login' %}">login</a>
+<br><a href="{% url 'base:home' %}">home</a>
+
+{% comment %} <form action="" method=POST> {% csrf_token %}
+
+</form> {% endcomment %}
+
+
+{% if errors %}
+{% for error in errors %}
+{{ error}}
+{% endfor %}
+{% endif %}
+
+
+<form class="form" action="" method=POST> {% csrf_token %}
+    {% comment %} <div class="form__group form__group">
+      <label for="fullname">Full Name</label>
+      <input id="fullname" name="fullname" type="text" placeholder="e.g. Dennis Ivy" /> 
+    </div> {% endcomment %}
+
+    <div class="form__group form__group">
+        <label for="firstname">First Name</label>
+        <input id="firstname" name="firstname" type="text" placeholder="e.g. aman" /> 
+      </div>
+    
+      <div class="form__group form__group">
+        <label for="lastname">Last Name</label>
+        <input id="lastname" name="lastname" type="text" placeholder="e.g. nazario" /> 
+      </div>
+    
+    <div class="form__group form__group">
+      <label for="username">Username</label>
+      <input id="username" value="" name="username" type="text" placeholder="e.g. amannazario" /> 
+    </div>
+
+    <div class="form__group form__group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="e.g. amannazario@xxx.com" /> 
+      </div>
+
+    <div class="form__group">
+      <label for="password">Password</label>
+      <input                                                                                               
+        id="password"                                                      
+        name="password"
+        type="password"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+      /> 
+    
+    
+    </div>
+
+    <div class="form__group">
+      <label for="confirm_password">Confirm Password</label>
+      <input
+        id="confirm_password"
+        name="confirm_password"
+        type="password"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+      />
+    </div>
+
+    <label for=private>Private Account?</label>
+    <br>
+    Yes<input type="radio" name="private" value=yes/>
+
+    No<input type="radio" name="private" value=no/>
+    
+    <br>
+    <input type=submit id="signup" value="Sign-Up">
+  </form>
